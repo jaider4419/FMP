@@ -4,21 +4,41 @@ using UnityEngine;
 
 public class MapTrigger : MonoBehaviour
 {
-    public GameObject mapUI;
-    private bool mapShowing;
     // Start is called before the first frame update
+    public GameObject Map;
+    bool isShowing;
+
     void Start()
     {
-        mapUI.SetActive(false);
+        Map.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKey(KeyCode.M))
         {
-            mapUI.SetActive(true);
-            mapShowing = true;
+            if (isShowing)
+            {
+                ShowtheMap();
+            }
+            else
+            {
+                DontShow();
+            }
         }
+
+    }
+
+    public void ShowtheMap()
+    {
+        isShowing=true;
+        Map.SetActive(true);
+    }
+
+    public void DontShow()
+    {
+        isShowing=false;
+        Map.SetActive(false);
     }
 }
