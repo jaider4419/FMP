@@ -32,7 +32,6 @@ public class NewBehaviourScript : MonoBehaviour
 
         theRB.velocity = new Vector3(moveInput.x * moveSpeed, theRB.velocity.y, moveInput.y * moveSpeed);
 
-        anim.SetFloat("moveSpeed", theRB.velocity.magnitude);
 
         transform.Translate(movement);
 

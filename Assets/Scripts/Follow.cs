@@ -6,9 +6,6 @@ public class EnemyController : MonoBehaviour
     public Transform player;
     public float moveSpeed = 3f; 
     private float stoppingDistance = 0f; 
-    public float reloadDelay = 1f; 
-    public Collider boundaryCollider; 
-    public string nextSceneName;
 
     private bool isFollowingPlayer = false;
 
@@ -19,9 +16,8 @@ public class EnemyController : MonoBehaviour
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        bool playerWithinBoundary = boundaryCollider.bounds.Contains(player.position);
 
-        if (distanceToPlayer < stoppingDistance || !playerWithinBoundary)
+        if (distanceToPlayer < stoppingDistance)
         {
             isFollowingPlayer = false; 
         }
