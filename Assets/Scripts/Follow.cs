@@ -4,10 +4,9 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 3f; 
-    private float stoppingDistance = 0f; 
+    public float moveSpeed = 3f;
+    private float stoppingDistance = 0f;
 
-    private bool isFollowingPlayer = false;
 
     void Update()
     {
@@ -19,11 +18,9 @@ public class EnemyController : MonoBehaviour
 
         if (distanceToPlayer < stoppingDistance)
         {
-            isFollowingPlayer = false; 
         }
         else
         {
-            isFollowingPlayer = true;
 
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
@@ -36,5 +33,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log("Following and touching?");
         }
     }
+
+
 
 }

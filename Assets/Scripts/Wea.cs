@@ -22,6 +22,8 @@ public class Wea : MonoBehaviour
     {
         Look();
         Debug.DrawRay(this.transform.position, this.transform.forward * 2, Color.red);
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Look()
