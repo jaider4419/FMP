@@ -16,6 +16,7 @@ public class ToggleUI : MonoBehaviour
 
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Locked;   
         if (Input.GetKeyDown(KeyCode.M))
         {
             uiVisible = !uiVisible;
